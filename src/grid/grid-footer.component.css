@@ -1,0 +1,12 @@
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+ul li a.disabled {
+  cursor: default;
+}

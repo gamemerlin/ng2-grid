@@ -1,0 +1,27 @@
+<tr>
+  <th *ngIf="isSelectable()">
+    <input type="checkbox"
+           [(ngModel)]="isSelectAll"
+           (ngModelChange)="onChangeSelectAll($event)">
+  </th>
+  <th *ngFor="let column of firstHeaderRow"
+      class="ng-grid-th"
+      [attr.colspan]="column.colSpan"
+      [attr.rowspan]="column.rowSpan"
+      [column]="column"
+      (click)="onSortColumn(column)"></th>
+</tr>
+<tr *ngIf="hasGroupedColumns">
+  <th *ngIf="isSelectable()"></th>
+  <th class="ng-grid-th"
+      *ngFor="let column of secondHeaderRow"
+      [column]="column"
+      (click)="onSortColumn(column)"></th>
+</tr>
+<tr *ngIf="shouldShowFilters()">
+  <th *ngIf="isSelectable()"></th>
+  <th class="ng-grid-th-filter"
+      *ngFor="let column of flattenedColumns"
+      [column]="column"
+      (onFilter)="handleFilter($event)"></th>
+</tr>

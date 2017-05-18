@@ -1,0 +1,33 @@
+<tr>
+  <td [attr.colspan]="colSpan">
+    <ul class="grid-pagination">
+      <li class="goto-first">
+        <a (click)="gotoPage(1)"
+           [ngClass]="{ disabled: isButtonDisabled(1) }">First</a>
+      </li>
+      <li class="goto-prev">
+        <a (click)="gotoPage(getState().current - 1)"
+           [ngClass]="{ disabled: isButtonDisabled(1) }">Previous</a>
+      </li>
+      <li class="goto-prev">
+        <a (click)="gotoPagePrevRange()"
+           *ngIf="shouldShowPrevRange()">...</a>
+      </li>
+      <li class="goto-page" *ngFor="let pageNumber of getRange()">
+        <a (click)="gotoPage(pageNumber)"> {{ pageNumber }}</a>
+      </li>
+      <li class="goto-next">
+        <a (click)="gotoPageNextRange()"
+           *ngIf="shouldShowNextRange()">...</a>
+      </li>
+      <li class="goto-next">
+        <a (click)="gotoPage(getState().current + 1)"
+           [ngClass]="{ disabled: isButtonDisabled(getState().totalPages) }">Next</a>
+      </li>
+      <li class="goto-last">
+        <a (click)="gotoPage(getState().totalPages)"
+           [ngClass]="{ disabled: isButtonDisabled(getState().totalPages) }">Last</a>
+      </li>
+    </ul>
+  </td>
+</tr>

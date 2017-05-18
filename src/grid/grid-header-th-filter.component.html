@@ -1,0 +1,13 @@
+<input type="text"
+       *ngIf="column.filter && column.filter.type=='textbox'"
+       [(ngModel)]="column.filter.value"
+       (ngModelChange)="filterBy(column)">
+<select *ngIf="column.filter && column.filter.type=='select'"
+          [(ngModel)]="column.filter.value"
+          (ngModelChange)="filterBy(column)">
+    <option *ngFor="let option of getSelectOptions()"
+            value="{{ option.value }}">{{ option.label }}</option>
+</select>
+<select *ngIf="!column.filter || column.filter.type=='disabled'">
+    <option>disabled</option>
+</select>

@@ -1,0 +1,9 @@
+<tr *ngFor="let row of getRows()">
+  <th *ngIf="isSelectable()">
+    <input type="checkbox" [(ngModel)]="row.isSelected">
+  </th>
+  <td class="ng-grid-td"
+      *ngFor="let cell of row.getCells()"
+      [row]="row"
+      [cell]="cell"></td>
+</tr>

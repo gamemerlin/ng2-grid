@@ -1,0 +1,15 @@
+<table>
+  <thead class="ng-grid-header"
+       [gridConfig]="config"
+       (onSelectAll)="selectAllRows($event)"
+       (onSort)="sortTable($event)"
+       (onFilter)="filterBy($event)"></thead>
+  <tbody class="ng-grid-body"
+         [gridConfig]="config"
+         [bodyRows]="getViewPortRows()"></tbody>
+  <tfoot class="ng-grid-footer"
+         *ngIf="isPaginationVisible()"
+         [gridConfig]="config"
+         [colSpan]="getColSpan()"
+         [pagingSet]="getVisibleRows()" ></tfoot>
+</table>
