@@ -3,7 +3,6 @@ import { RowModel } from './row.model';
 import { GridMetaService } from './grid-meta.service';
 
 @Component({
-  moduleId: module.id,
   selector: '.ng-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['grid.component.css'],

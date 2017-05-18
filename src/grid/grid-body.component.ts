@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { RowModel } from './row.model';
 
 @Component({
-  moduleId: module.id,
   selector: '.ng-grid-body',
   templateUrl: './grid-body.component.html'
 })

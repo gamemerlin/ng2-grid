@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: '.ng-grid-header',
   templateUrl: './grid-header.component.html'
 })

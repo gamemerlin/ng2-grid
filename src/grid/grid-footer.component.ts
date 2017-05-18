@@ -10,7 +10,6 @@ class DefaultPagingApi {
 }
 
 @Component({
-  moduleId: module.id,
   selector: '.ng-grid-footer',
   templateUrl: './grid-footer.component.html',
   styleUrls: ['grid-footer.component.css'],

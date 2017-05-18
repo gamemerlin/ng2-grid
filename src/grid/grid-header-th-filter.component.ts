@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GridMetaService } from "./grid-meta.service";
 
 @Component({
-    moduleId: module.id,
     selector: '.ng-grid-th-filter',
     templateUrl: './grid-header-th-filter.component.html'
 })
